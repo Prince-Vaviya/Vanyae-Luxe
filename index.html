@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanyee Luxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-women">
+    <div class="mobile-container">
+        <header>
+            <div class="logo">Vanyee Luxe</div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="search" placeholder="Search on Vanyee">
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-heart" id="headerWishlistIcon"></i>
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-bag" id="headerCartIcon"></i>
+                </div>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a data-theme="women" class="active">WOMEN</a></li>
+                <li><a data-theme="men">MEN</a></li>
+                <li><a data-theme="kids">KIDS</a></li>
+                <li><a data-theme="home">HOME</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="hero-banner">
+                <img src="node-32.png" alt="Mid-Year Beauty Lineup">
+                <div class="hero-text">
+                    <p class="tagline">*Mid-Year Beauty Lineup*</p>
+                    <p class="sub-tagline">all of you</p>
+                </div>
+            </section>
+
+            <div class="content-switcher-wrapper">
+                <div class="content-switcher" id="contentSwitcher"></div>
+            </div>
+
+            <div class="controls-area" style="display: none;">
+                <div class="filter-controls">
+                    <button id="toggleFilterPanelBtn"><i class="fas fa-filter"></i> Filters</button>
+                    <div id="filterPanel" class="filter-panel">
+                        <h4>Filter By</h4>
+                        <div class="filter-group" id="brandFilterGroup"><h5>Brand</h5></div>
+                        <div class="filter-group"><h5>Price Range</h5><div class="price-inputs"><input type="number" id="minPrice" placeholder="Min"><span>-</span><input type="number" id="maxPrice" placeholder="Max"></div></div>
+                        <button id="applyFiltersBtn" class="apply-filters-button">Apply Filters</button>
+                    </div>
+                </div>
+                <div class="sort-controls"><label for="sortOptions">Sort By:</label><select id="sortOptions"><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option></select></div>
+            </div>
+
+            <section id="dynamic-content-area"></section>
+
+            <section class="category-section" id="default-category-section" style="display: none;">
+                <div class="category-item"><div class="category-info"><h3>Beauty</h3><p>Self - Care</p></div><img src="node-32.png" alt="Beauty Products"></div>
+                <div class="category-item"><div class="category-info"><h3>Self - Care</h3><p>Post - Care</p></div><img src="node-32.png" alt="Self-Care Products"></div>
+                <div class="category-item"><div class="category-info"><h3>Makeup</h3><p>Makeup</p></div><img src="node-32.png" alt="Makeup Products"></div>
+            </section>
+            <section class="discount-banner"><p>EXTRA 20% OFF<span>*</span> UP TO 35% OFF <span>ON BESTSELLERS</span></p></section>
+            <section class="promo-banners"><img src="node-32.png" alt="SPF BFF Promotion"><img src="node-32.png" alt="Nykaa Nail Enamel Promotion"></section>
+            <section class="recommendations" id="default-recommendations-section" style="display: none;"><h2>Recommendations</h2><div class="product-grid"></div></section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
