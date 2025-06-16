@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const maxPriceInput = document.getElementById('maxPrice');
 	const applyFiltersBtn = document.getElementById('applyFiltersBtn');
 	const sortOptionsSelect = document.getElementById('sortOptions');
-	const headerCartIcon = document.getElementById('headerCartIcon'); // Added
+	const headerCartIcon = document.getElementById('headerCartIcon');
 
 	let cartItems = [];
 	let displayedProducts = [];
@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// --- THEME & INITIALIZATION ---
 	mainNavLinks.forEach(link => {
 		link.addEventListener('click', function(event) {
-			if (this.getAttribute('href') === '#') event.preventDefault();
 			mainNavLinks.forEach(l => l.classList.remove('active'));
 			this.classList.add('active');
 			const selectedTheme = this.dataset.theme;
@@ -113,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				document.title = `Vanyee Luxe - ${selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)}`;
 			}
 			currentPath = [];
-			currentView = ''; // Reset to default view for the new theme
+			currentView = '';
 			renderContentFlow();
 		});
 	});
@@ -141,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			applySortAndRender();
 		});
 
-		if (headerCartIcon) { // Added event listener for header cart icon
+		if (headerCartIcon) { 
 			headerCartIcon.addEventListener('click', showCartPage);
 		}
 
@@ -198,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		let tempProducts = [...allProducts];
 		if (currentPath && currentPath.length > 0) {
 			const currentCategoryLeafKey = currentPath[currentPath.length - 1];
-			// Filter by full path or if the leaf key is one of the product's categories
 			tempProducts = tempProducts.filter(p =>
 				currentPath.every((segment, i) => p.category[i] === segment) ||
 				p.category.includes(currentCategoryLeafKey)
@@ -261,21 +259,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (promoBanners) promoBanners.style.display = 'none';
 			renderCartPage();
 		} else {
-			if (dynamicContentArea) dynamicContentArea.innerHTML = ''; // Clear for non-cart views
+			if (dynamicContentArea) dynamicContentArea.innerHTML = '';
 			if (contentSwitcher && contentSwitcher.parentElement) {
 				contentSwitcher.parentElement.style.display = 'block';
 				renderSwitcher();
 			}
-			renderDynamicContentOrProducts(); // This will handle controlsArea, default sections etc.
+			renderDynamicContentOrProducts();
 
-			// These banners are generally part of non-cart browsing experience
 			if (discountBanner) discountBanner.style.display = 'block';
 			if (promoBanners) promoBanners.style.display = 'block';
 		}
 	}
 
 	function renderDynamicContentOrProducts() {
-		if (dynamicContentArea && currentView !== 'cart') dynamicContentArea.innerHTML = ''; // Ensure clean slate if not cart
+		if (dynamicContentArea && currentView !== 'cart') dynamicContentArea.innerHTML = '';
 		if (defaultCategorySection) defaultCategorySection.style.display = 'none';
 
 		let dataToShow = siteData;
@@ -285,11 +282,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			const nextLevel = dataToShow[segment] || (dataToShow.subCategories ? dataToShow.subCategories[segment] : null);
 			if (nextLevel && (nextLevel.subCategories || nextLevel.items)) {
 				dataToShow = nextLevel;
-			} else if (nextLevel) { // It's a leaf node in siteData (like an item name string) or a category without further subcategories defined in siteData
-				dataToShow = nextLevel; // Could be an object with just 'name' or a string.
+			} else if (nextLevel) {
+				dataToShow = nextLevel;
 				showProductsDirectly = true;
 				break;
-			} else { // Path segment not found or leads to undefined structure
+			} else {
 				showProductsDirectly = true;
 				break;
 			}
@@ -857,10 +854,74 @@ const allProducts = [{
 		colorName: "peach",
 		colorHex: "#FFDAB9",
 		image: "node-32.png"
-	}],
+	},
+],
 	defaultVariantIndex: 0,
 	description: "A beautiful glossy lip tint for a subtle pop of color."
-}, ];
+}, {
+	id: "lp002",
+	name: "Glossy Lip Tint",
+	price: 600,
+	rating: 4.1,
+	brand: "BohoChic",
+	category: ["beauty", "makeup", "lips", "lipstick"],
+	tags: ["glossy", "tint", "hydrating"],
+	image: "node-32.png",
+	variants: [{
+		colorName: "cherry",
+		colorHex: "#DE3163",
+		image: "node-32.png"
+	}, {
+		colorName: "peach",
+		colorHex: "#FFDAB9",
+		image: "node-32.png"
+	},
+],
+	defaultVariantIndex: 0,
+	description: "A beautiful glossy lip tint for a subtle pop of color."
+},{
+	id: "lp002",
+	name: "Glossy Tint",
+	price: 599,
+	rating: 4.1,
+	brand: "ClearSkin",
+	category: ["beauty", "makeup", "lips", "lipstick"],
+	tags: ["glossy", "tint", "hydrating"],
+	image: "node-32.png",
+	variants: [{
+		colorName: "cherry",
+		colorHex: "#DE3163",
+		image: "node-32.png"
+	}, {
+		colorName: "peach",
+		colorHex: "#FFDAB9",
+		image: "node-32.png"
+	},
+],
+	defaultVariantIndex: 0,
+	description: "A beautiful glossy lip tint for a subtle pop of color."
+},{
+	id: "lp002",
+	name: "Matte Lip Tint",
+	price: 799,
+	rating: 4.1,
+	brand: "LuxeLips",
+	category: ["beauty", "makeup", "lips", "lipstick"],
+	tags: ["glossy", "tint", "hydrating"],
+	image: "node-32.png",
+	variants: [{
+		colorName: "cherry",
+		colorHex: "#DE3163",
+		image: "node-32.png"
+	}, {
+		colorName: "peach",
+		colorHex: "#FFDAB9",
+		image: "node-32.png"
+	},
+],
+	defaultVariantIndex: 0,
+	description: "A beautiful glossy lip tint for a subtle pop of color."
+},];
 const siteData = {
 	beauty: {
 		name: "Beauty",
