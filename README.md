@@ -1,56 +1,84 @@
-# ✨ Vanyee Luxe – Mobile E-Commerce Project 🛍️
+# Vanyee Luxe: Project Documentation
 
-Welcome to the Vanyee Luxe repository!  
-This project is a premium, mobile-first e-commerce experience inspired by Nykaa, focused on beauty & fashion.  
-It features themed shopping, dynamic product filtering, cart, and a pastel, modern UI.  
-Below you’ll find everything you need to understand, run, and evaluate the codebase.  
-Emojis are used throughout for clarity and fun! 🎉
+## 🔍 Problem Statement
+Nykaa, a leader in the fashion and beauty industry, aims to deliver a **premium, mobile-first shopping experience**. This project replicates that vision by building a **responsive and interactive e-commerce platform** focused on beauty, skincare, and fashion products with additional creative features.
 
 ---
 
-## 📋 Table of Contents
+## 🛠️ Tools & Technologies Used
 
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Screenshots](#screenshots)
-- [Getting Started](#getting-started)
-- [Folder Structure](#folder-structure)
-- [Implementation Overview](#implementation-overview)
-- [Creative Features](#creative-features)
-- [Pricing Strategy](#pricing-strategy)
-- [Challenges & Solutions](#challenges--solutions)
-- [Evaluation Checklist](#evaluation-checklist)
-- [Credits](#credits)
+| Category             | Tools/Technologies         |
+|----------------------|----------------------------|
+| Frontend Development | HTML5, CSS3, JavaScript    |
+| Design & Theming     | Figma                      |
+| Deployment           | GitHub Pages               |
 
 ---
 
-## 📝 About the Project
+## 🖼️ Website Features
 
-**Vanyee Luxe** is a responsive, mobile-optimized e-commerce app modeled after the Nykaa brand.  
-It’s designed to deliver a delightful shopping experience for beauty and fashion lovers, with robust filtering, and themed browsing.
+### ✅ Core Pages Implemented:
+- **Homepage** with hero banners and featured products
+- **Product Listings** with:
+  - Filters (brand, price)
+  - Sorting (Low to High, High to Low)
+- **Theme Switching**: Women, Men, Kids, Home
 
----
-
-## 🚀 Features
-
-- **4 Shopping Themes:** Women 👩, Men 👨, Kids 🧒, Home 🏠
-- **Dynamic Product Filtering:** Filter by brand, price, and more 🔍
-- **Wishlist:** Save favorites with a single tap 💖
-- **Cart:** Add, remove, and update products in your bag 🛒
-- **Persistent State:** Cart saved via localStorage 💾
-- **Modern UI:** Pastel color schemes, smooth transitions, and clear navigation 🎨
-
----
-
-## 🛠️ Tech Stack
-
-- **HTML5** – Semantic, accessible markup
-- **CSS3** – CSS variables, grid/flexbox, pastel themes
-- **JavaScript (ES6+)** – Modular, event-driven, localStorage
-- **Figma** – https://www.figma.com/design/Z2hEn1YKN2oXg5kuLuHUqk/Vanyae-Luxe?node-id=30-9080&t=TiDgl2x4zStPFvOp-1
+### 🛒 Cart System:
+- Add to Bag
+- Increase/Decrease Quantity
+- Remove Item
+- Subtotal Calculation
 
 ---
 
-## 🖼️ Screenshots
-Is included in Screenshots Folder
+## 🌈 Creative Features Added
+- **Dynamic theme switching** by category (Women, Men, etc.)
+- **Product Ratings** using star icons
+
+---
+
+## 💰 Pricing Strategy
+
+Simulated pricing logic via UI design:
+- **Discount Banners**: "EXTRA 20% OFF", etc.
+- **Combo Offer** support in descriptions
+- **First-time buyer** banner on top
+- **Designed Business Model**
+
+---
+
+## 📦 Product Organization
+- Organized by:
+  - **Type** (Face Wash, Lipstick, Dress)
+  - **Brand** (BohoChic, LuxeLips, etc.)
+
+---
+
+## 🎨 UI/UX Design
+- Themed with pastel tones
+- Google Fonts: **Poppins**
+- Clean and intuitive UX for mobile
+
+---
+
+## ⚠️ Challenges Faced & Solutions
+
+| Challenge                          | Solution                                   |
+|-----------------------------------|--------------------------------------------|
+| Multi-theme layout                | Used dynamic `data-theme` and CSS variables|
+| Product rendering logic           | Built `renderProductGrid()` dynamically    |
+| Persistent cart/wishlist         | Used `localStorage`                        |
+| Dynamic filtering and sorting     | Modularized filter/sort functions          |
+
+---
+
+## 📅 Final Deliverables
+- ✅ Filter, Sort, Cart
+- ✅ Documentation (README)
+- ✅ Figma Designs => [Figma](https://www.figma.com/design/Z2hEn1YKN2oXg5kuLuHUqk/Vanyae-Luxe?node-id=30-9080&t=q20GGfXlaEesiIm2-1)
+- ✅ Screenshots
+- ✅ Business Model
+
+---
+

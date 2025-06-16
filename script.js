@@ -291,8 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				break;
 			}
 		}
-
-		// If at root and no specific top-level category selected (e.g. after theme switch)
 		if (currentPath.length === 0 && siteData[Object.keys(siteData)[0]] && currentView !== 'products') {
 			const activeThemeMatch = document.body.className.match(/theme-(\w+)/);
 			const mainCatKey = activeThemeMatch ? (siteData[activeThemeMatch[1]] ? activeThemeMatch[1] : Object.keys(siteData)[0]) : Object.keys(siteData)[0];
@@ -309,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (showProductsDirectly || currentView === 'products') {
 			if (controlsArea) controlsArea.style.display = 'flex';
 			currentView = 'products';
-			filterAndSortProducts(); // This will call renderProductGrid
+			filterAndSortProducts();
 		} else if (dataToShow && dataToShow.subCategories) {
 			if (controlsArea) controlsArea.style.display = 'none';
 			currentView = 'categories';
@@ -318,10 +316,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (controlsArea) controlsArea.style.display = 'none';
 			currentView = 'items';
 			renderItemCards(dataToShow.items);
-		} else { // Fallback to default sections if no specific content path
+		} else { 
 			if (controlsArea) controlsArea.style.display = 'none';
 			if (defaultCategorySection) defaultCategorySection.style.display = 'block';
-			// Optionally, render some default products here for the home screen of a theme
 		}
 	}
 
@@ -363,11 +360,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function renderProductGrid(title, productsToRender) {
 		if (!dynamicContentArea) return;
-		if (currentView === 'cart') return; // Don't render products if cart is active
+		if (currentView === 'cart') return; 
 
-		dynamicContentArea.innerHTML = ''; // Clear before rendering products
+		dynamicContentArea.innerHTML = ''; 
 		const recommendationsSection = document.createElement('section');
-		recommendationsSection.className = 'recommendations'; // Use existing class for styling consistency
+		recommendationsSection.className = 'recommendations'; 
 		const heading = document.createElement('h2');
 		heading.textContent = title || "Products";
 		recommendationsSection.appendChild(heading);
